@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginCotroller;
+use App\Http\Controllers\Auth\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('auth')->group(function () {
+    Route::post('/login',LoginCotroller::class);
 });
